@@ -1,0 +1,17 @@
+.\#*
+.build
+Build
+Code-TidyAll-Plugin-Go-*
+Debian_CPANTS.txt
+MANIFEST
+META.yml
+MYMETA.json
+MYMETA.yml
+Makefile
+Makefile.PL
+Makefile.old
+\#*\#
+_build
+blib*
+cover_db*
+pm_to_blib*

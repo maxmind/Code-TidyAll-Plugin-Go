@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Capture::Tiny qw( capture_merged );
-use Code::TidyAll::Util qw( write_file );
 use Moo;
 use Try::Tiny;
 
@@ -18,7 +17,7 @@ sub transform_file {
     try {
         my $cmd = join q{ }, $self->cmd, $self->argv, $file;
         my $output = capture_merged { system($cmd) and die "$cmd failed"; };
-        write_file( $file, $output );
+        _write_file( $file, $output );
     }
     catch {
         die sprintf(
@@ -26,6 +25,12 @@ sub transform_file {
             $self->cmd, $self->argv
         );
     };
+}
+
+sub _write_file {
+    my ( $file, $contents ) = @_;
+    open( my $fh, ">", $file ) or die "could not open $file: $!";
+    print $fh $contents;
 }
 
 1;

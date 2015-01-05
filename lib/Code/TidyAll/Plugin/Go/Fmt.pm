@@ -3,9 +3,8 @@ package Code::TidyAll::Plugin::Go::Fmt;
 use strict;
 use warnings;
 
-use Capture::Tiny qw( capture_merged );
+use IPC::Run3 qw( run3 );
 use Moo;
-use Try::Tiny;
 
 extends 'Code::TidyAll::Plugin';
 
@@ -14,17 +13,17 @@ sub _build_cmd { 'gofmt' }
 sub transform_file {
     my ( $self, $file ) = @_;
 
-    try {
-        my $cmd = join q{ }, $self->cmd, $self->argv, $file;
-        my $output = capture_merged { system($cmd) and die "$cmd failed"; };
-        _write_file( $file, $output );
+    my $cmd = join q{ }, $self->cmd, $self->argv, $file;
+
+    my $output;
+    my $err;
+    run3( $cmd, \undef, \$output, \$err );
+    if ( $? > 0 ) {
+        $err ||= 'problem running ' . $self->cmd;
+        die "$err\n";
     }
-    catch {
-        die sprintf(
-            q{%s exited with error - possibly bad arg list '%s'},
-            $self->cmd, $self->argv
-        );
-    };
+
+    _write_file( $file, $output );
 }
 
 sub _write_file {

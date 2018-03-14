@@ -3,7 +3,7 @@ package Code::TidyAll::Plugin::Go;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # ABSTRACT: Provides gofmt and go vet plugins for Code::TidyAll
 

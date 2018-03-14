@@ -30,8 +30,8 @@ sub transform_file {
 
 sub _write_file {
     my ( $file, $contents ) = @_;
-    open( my $fh, ">", $file ) or die "could not open $file: $!";
-    print $fh $contents;
+    open( my $fh, '>', $file ) or die "could not open $file: $!";
+    print {$fh} $contents or die $!;
 }
 
 1;

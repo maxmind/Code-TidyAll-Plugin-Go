@@ -1,8 +1,13 @@
 package Code::TidyAll::Plugin::Go;
 
+use strict;
+use warnings;
+
 our $VERSION = '0.03';
 
 # ABSTRACT: Provides gofmt and go vet plugins for Code::TidyAll
+
+1;
 
 __END__
 

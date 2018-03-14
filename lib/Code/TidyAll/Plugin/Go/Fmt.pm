@@ -3,6 +3,8 @@ package Code::TidyAll::Plugin::Go::Fmt;
 use strict;
 use warnings;
 
+our $VERSION = '0.03';
+
 use Moo;
 use namespace::autoclean;
 

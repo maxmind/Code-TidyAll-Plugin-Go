@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.04     2018-03-14
+
 - As of Go 1.10, `go vet` no longer works on individual files. This plugin
   now uses `go tool vet` instead.
 

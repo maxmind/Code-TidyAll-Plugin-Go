@@ -4,7 +4,7 @@ Code::TidyAll::Plugin::Go - Provides gofmt and go vet plugins for Code::TidyAll
 
 # VERSION
 
-version 0.03
+version 0.04
 
 # SYNOPSIS
 
@@ -34,6 +34,7 @@ Gregory Oschwald <oschwald@maxmind.com>
 
 # CONTRIBUTORS
 
+- Andy Jack <andyjack@users.noreply.github.com>
 - Dave Rolsky <drolsky@maxmind.com>
 - Greg Oschwald <goschwald@maxmind.com>
 

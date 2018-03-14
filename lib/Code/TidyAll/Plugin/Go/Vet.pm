@@ -3,8 +3,10 @@ package Code::TidyAll::Plugin::Go::Vet;
 use strict;
 use warnings;
 
-use IPC::Run3 qw( run3 );
 use Moo;
+use namespace::autoclean;
+
+use IPC::Run3 qw( run3 );
 
 extends 'Code::TidyAll::Plugin';
 

@@ -8,7 +8,7 @@ use Moo;
 
 extends 'Code::TidyAll::Plugin';
 
-sub _build_cmd { 'go vet' }
+sub _build_cmd { 'go tool vet' }
 
 sub validate_file {
     my ( $self, $file ) = @_;

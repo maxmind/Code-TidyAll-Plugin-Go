@@ -25,7 +25,7 @@ In your F<.tidyallrc> file:
 
 This distro ships with two Go-related plugins for L<Code::TidyAll>. The
 C<Go::Fmt> plugin formats your code with C<gofmt>. The C<Go::Vet> plugin runs
-C<go vet> against your code and dies if that command finds anything to
+C<go tool vet> against your code and dies if that command finds anything to
 complain about.
 
 =head1 SUPPORT
